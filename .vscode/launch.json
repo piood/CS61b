@@ -15,21 +15,21 @@
             "name": "Launch GraphDBLauncher",
             "request": "launch",
             "mainClass": "GraphDBLauncher",
-            "projectName": "proj1b"
+            "projectName": "proj3"
         },
         {
             "type": "java",
             "name": "Launch MapServer",
             "request": "launch",
             "mainClass": "MapServer",
-            "projectName": "proj1b"
+            "projectName": "proj3"
         },
         {
             "type": "java",
             "name": "Launch CSCourseDB",
             "request": "launch",
             "mainClass": "example.CSCourseDB",
-            "projectName": "proj1b"
+            "projectName": "proj3"
         }
     ]
 }
