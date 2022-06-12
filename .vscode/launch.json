@@ -6,6 +6,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AssertEqualsStringDemo",
+            "request": "launch",
+            "mainClass": "AssertEqualsStringDemo"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
