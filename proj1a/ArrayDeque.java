@@ -1,10 +1,12 @@
-/** second part of project1A.
+/**
+ * second part of project1A.
  * deque implemented by array
+ * 
  * @author FlyingPig
  */
-public class ArrayDeque<T> {
+public class ArrayDeque<T> implements Deque<T> {
 
-    /** array to save data.*/
+    /** array to save data. */
     private T[] array;
     /** size of the deque. */
     private int size;
@@ -27,19 +29,25 @@ public class ArrayDeque<T> {
         last = 4;
     }
 
-    /** decide if the deque is empty.
+    /**
+     * decide if the deque is empty.
+     * 
      * @return true if the deque is empty, vice versa.
      */
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
     /** return the size of the deque. */
+    @Override
     public int size() {
         return size;
     }
 
-    /** return the "index - 1".
+    /**
+     * return the "index - 1".
+     * 
      * @param index index
      */
     private int minusOne(int index) {
@@ -49,7 +57,9 @@ public class ArrayDeque<T> {
         return index - 1;
     }
 
-    /** return the "index + 1".
+    /**
+     * return the "index + 1".
+     * 
      * @param index index
      */
     private int plusOne(int index, int module) {
@@ -90,9 +100,12 @@ public class ArrayDeque<T> {
         length /= 2;
     }
 
-    /** add one item at the front of the deque.
+    /**
+     * add one item at the front of the deque.
+     * 
      * @param item the item we want to add
      */
+    @Override
     public void addFirst(T item) {
         if (size == length - 1) {
             grow();
@@ -102,9 +115,12 @@ public class ArrayDeque<T> {
         size++;
     }
 
-    /** add one item at the end of the deque.
+    /**
+     * add one item at the end of the deque.
+     * 
      * @param item item we want to add
      */
+    @Override
     public void addLast(T item) {
         if (size == length - 1) {
             grow();
@@ -114,9 +130,12 @@ public class ArrayDeque<T> {
         size++;
     }
 
-    /** remove the first item.
+    /**
+     * remove the first item.
+     * 
      * @return the removed first item
-    */
+     */
+    @Override
     public T removeFirst() {
         if (length >= 16 && length / size >= 4) {
             shrink();
@@ -130,9 +149,12 @@ public class ArrayDeque<T> {
         return ret;
     }
 
-    /** remove the last item.
+    /**
+     * remove the last item.
+     * 
      * @return the removed last item
      */
+    @Override
     public T removeLast() {
         if (length >= 16 && length / size >= 4) {
             shrink();
@@ -145,9 +167,12 @@ public class ArrayDeque<T> {
         return array[last];
     }
 
-    /** return the item indexed at index.
+    /**
+     * return the item indexed at index.
+     * 
      * @param index index
      */
+    @Override
     public T get(int index) {
         if (index >= size) {
             return null;
@@ -160,6 +185,7 @@ public class ArrayDeque<T> {
     }
 
     /** print the entire deque from front to end. */
+    @Override
     public void printDeque() {
         int ptr = front;
         while (ptr != last) {
